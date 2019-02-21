@@ -1,0 +1,23 @@
+﻿    1. Establezca verdadero o falso en las siguientes sentencias:
+        1. Rest es un protocolo que permite la interoperabilidad  F
+        2. Rest es una tecnología que está basada sobre el protocolo http V
+        3. SOAP es un protocolo que tiene el objetivo transferir mensajes entre aplicaciones V distribuidas 
+        4. Los componentes de rest son nouns,Adjectives,Representations  F
+        5. SOA es un protocolo de transferencia de mensajes entre aplicaciones distribuidas F
+    2. Explique cada uno de los niveles de madurez de REST (Gloria REST) 
+    3. Cuales son los componentes del SOAP-ENVELOPE y para que sirven 
+    4. Defina la diferencia de un estilo arquitectónico cliente servidor y un P2P 
+       
+       Cliente servidor tiene jerarquia definida y solo el cliente puede iniciar comunicaciones, el servidor no puede iniciarlas por su cuenta, p2p no hay una jerarquia definida y todos los equipos son clinetes y servidores, cualquiera puede iniciar comunicaciones con cualquiera. 
+       
+    5. Escriba un ejemplo de un programa P2P y explique por que es P2P 
+       uTorrent, porque uno al descargar lo hace de diferentes computadores a la vez y diferentes partes a la vez, no es una descarga en orden, las partes se unen al descargar todo, hay tantas descargas como equipos que esten haciendo de servidor para el archivo que  quiero, a la vez, otros pueden descargar de mi si yo me habilito para ser servidor de un archivo en especifico. 
+    6. Qué es WSDL y para que sirve? 
+       Es la forma de escritura en XML que emplea SOAP, sirve para intercambiar de forma segura mensajes por http
+    7. Explique que significa que un objeto sea Thread-Safety 
+       Que diferentes hilos puedan acceder a este o sus variables, y que sea asegurado que no habra deadlock, o que 2 hilos puedan acceder a la vez a una variable, sino que estos accedan en un orde, que las variables sean inmutables o que directamente no se pueda acceder a ese objeto
+    8. Explique los tipos y las variables atómicas.  
+       Las variables atomicas son aquellas que por implementacion son Thread-Safe, porque se asegura que las operaciones que se les aplica sean unitarias y que solo 1 proceso pueda acceder a estas.
+       Int, boolean, integer array, long, etc.
+       
+
