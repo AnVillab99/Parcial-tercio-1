@@ -11,9 +11,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import org.springframework.stereotype.Service;
+
 import edu.eci.arsw.Threads.CountThread;
 import edu.eci.arsw.Threads.MainThread;
-
+//@Service
 public class GuidFinder {
 
 	private static UUID[] guids;
@@ -22,7 +24,7 @@ public class GuidFinder {
 	public GuidFinder() throws Exception {
 		getGuids();
 	}
-
+	
 	public static UUID[] getGuids() throws Exception {
 
 		if (guids == null) {
