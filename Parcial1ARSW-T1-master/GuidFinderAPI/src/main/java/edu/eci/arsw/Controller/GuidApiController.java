@@ -41,7 +41,7 @@ public class GuidApiController {
 	public ResponseEntity<?> registerSearchUUID(@RequestBody String guidToFind){
 		ResponseEntity<?> re = null;
 		try {
-			String guidToFind2=guidToFind.substring(1, guidToFind.length()-1);
+			
 			System.out.println("lol"+guidToFind);
 			UUID guid = UUID.fromString(guidToFind);
 			int a= gf.countGuids(guid);			
@@ -49,9 +49,9 @@ public class GuidApiController {
 			dateFormatGmt.setTimeZone(TimeZone.getTimeZone("GMT"));
 			SimpleDateFormat dateFormatLocal = new SimpleDateFormat("yyyy-MMM-dd HH:mm:ss");			
 			String da = dateFormatLocal.parse( dateFormatGmt.format(new Date()) ).toString();			
-			String[] wry = new String [2];
+			String[] wry = new String [3];
 			wry[0] = "Fecha:"+da;
-			wry[1] = "UUID:"+guidToFind.toString();
+			wry[1] = "UUID:"+guidToFind;
 			wry[2]= "Count: "+String.valueOf(a);
 			busquedas.put(guid, wry);			
 			re = new ResponseEntity<>("OK", HttpStatus.ACCEPTED);
