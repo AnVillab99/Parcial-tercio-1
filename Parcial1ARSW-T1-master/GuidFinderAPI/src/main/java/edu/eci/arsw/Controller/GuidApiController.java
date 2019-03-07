@@ -38,12 +38,13 @@ public class GuidApiController {
 	private Map<UUID, String[]> busquedas = new HashMap<UUID, String[]>();
 
 	@RequestMapping(method = RequestMethod.POST)
-	public ResponseEntity<?> registerSearchUUID(@RequestBody UUID guidToFind){
+	public ResponseEntity<?> registerSearchUUID(@RequestBody String guidToFind){
 		ResponseEntity<?> re = null;
 		try {
+			guidToFind=guidToFind.substring(1, guidToFind.length()-1);
 			System.out.println("lol"+guidToFind);
-			//UUID guid = UUID.fromString(guidToFind);
-			int a= gf.countGuids(guidToFind);			
+			UUID guid = UUID.fromString(guidToFind);
+			int a= gf.countGuids(guid);			
 			SimpleDateFormat dateFormatGmt = new SimpleDateFormat("yyyy-MMM-dd HH:mm:ss");
 			dateFormatGmt.setTimeZone(TimeZone.getTimeZone("GMT"));
 			SimpleDateFormat dateFormatLocal = new SimpleDateFormat("yyyy-MMM-dd HH:mm:ss");			
@@ -52,7 +53,7 @@ public class GuidApiController {
 			wry[0] = "Fecha:"+da;
 			wry[1] = "UUID:"+guidToFind.toString();
 			wry[2]= "Count: "+String.valueOf(a);
-			busquedas.put(guidToFind, wry);			
+			busquedas.put(guid, wry);			
 			re = new ResponseEntity<>("OK", HttpStatus.ACCEPTED);
 			
 
