@@ -41,8 +41,8 @@ public class GuidApiController {
 	public ResponseEntity<?> registerSearchUUID(@RequestBody String guidToFind){
 		ResponseEntity<?> re = null;
 		try {
-			guidToFind=guidToFind.substring(1, guidToFind.length()-1);
-			System.out.println("lol"+guidToFind);
+			String guidToFind2=guidToFind.substring(1, guidToFind.length()-1);
+			System.out.println("lol"+guidToFind2);
 			UUID guid = UUID.fromString(guidToFind);
 			int a= gf.countGuids(guid);			
 			SimpleDateFormat dateFormatGmt = new SimpleDateFormat("yyyy-MMM-dd HH:mm:ss");
